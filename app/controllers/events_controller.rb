@@ -1,9 +1,9 @@
 class EventsController < ApplicationController
   def index
     if params[:term].present?
-      eventos = Event.where("name like '%#{params[:term]}%'").order('timestamps DESC')
+      eventos = Event.where("name like '%#{params[:term]}%'").order('timestamp DESC')
     else 
-      eventos = Event.order('timestamps DESC')
+      eventos = Event.order('timestamp DESC')
     end
     json_response(eventos)
   end
