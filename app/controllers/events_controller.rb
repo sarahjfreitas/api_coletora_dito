@@ -9,7 +9,7 @@ class EventsController < ApplicationController
   end
 
   def create
-    evento = Event.create!(name: params[:event], timestamps: params[:timestamp])
+    evento = Event.create!(name: params[:event], timestamp: params[:timestamp])
     json_response(evento, :created, events_url)
   end
 end
